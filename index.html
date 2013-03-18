@@ -1,0 +1,21 @@
+---
+layout: default
+head_content:
+  <link rel="alternate" type="application/atom+xml" href="http://pch.im/feed/" />
+---
+
+<div class="listing">
+{% for post in site.posts %}
+  {% unless forloop.first %}
+  <p class="separator">❦</p>
+  {% endunless %}
+
+  <article class="post">
+    <h2><a href="{{ post.url | replace: '.html', '' }}">{{ post.title }}</a></h2>
+
+    <div class="post-body">{{ post.summary }}</div>
+
+    <p class="date">{{ post.date | date: "%B %e, %Y" }}</p>
+  </article>
+{% endfor %}
+</div>
