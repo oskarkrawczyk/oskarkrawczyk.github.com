@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>
-    {% if page.title %}
-      {{ page.title }} &mdash; the blog
-    {% else %}
-      the blog
-    {% endif %}
-  </title>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="author" content="Piotr Chmolowski" />
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/reset.css?spring" type="text/css" media="screen, projection, print" />
+    <link rel="stylesheet" href="css/base.css" type="text/css" media="screen, projection" />
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" />
 
-  <script type="text/javascript" src="//use.typekit.net/hzg5uqv.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mootools/1.4.5/mootools-core-full-nocompat-yc.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mootools-more/1.4.0.1/mootools-more-yui-compressed.js"></script>
+    <script type="text/javascript" src="//raw.github.com/chjj/marked/master/lib/marked.js"></script>
+    <script type="text/javascript" src="/javascripts/moofx.js"></script>
+    <script type="text/javascript" src="/javascripts/utilities.js"></script>
+    <script type="text/javascript" src="/javascripts/base.js"></script>
 
-  <link rel="stylesheet" href="/css/base.css" type="text/css" />
-  <link rel="alternate" href="http://theblog.org/feed" type="application/rss+xml" />
-</head>
-<body>
-  <div class="wrapper">
-    <header class="clearfix">
-      <h1><span>the</span> blog</h1>
-      <hr/>
-      <p>Hivelogic is a website about tech, code, podcasting, creativity, and the mind, written by Dan Benjamin of 5by5 Studios since 2000.</p>
-      <hr/>
-    </header>
-    <section class="main">
+    <link rel="alternate" href="http://theblog.org/feed" type="application/rss+xml" />
+
+    <title>
+      {% if page.title %}
+        {{ page.title }} &mdash; Oskar Krawczyk of Nouincolor
+      {% else %}
+        Oskar Krawczyk of Nouincolor
+      {% endif %}
+    </title>
+  </head>
+  <body>
+    <div id="body-wrapper">
+      <div id="intro">
+        <h1>Oskar Krawczyk</h1>
+        <h2><small>of</small> Nouincolor</h2>
+        <div class="info">
+          <p>
+            Co-created <a title="JSFiddle" href="http://jsfiddle.net">JSFiddle</a> and <a title="Positionly" href="https://positionly.com">Positionly</a><br />
+            Loves <a title="" href="#">coffee</a>, creates <a title="" href="https://github.com/oskarkrawczyk">things</a>, <a title="" href="#timeline">blogs</a> and <a title="" href="https://twitter.com/oskar">tweets</a><br />
+            Cycles all around <a title="Warsaw" href="http://en.wikipedia.org/wiki/Warsaw">Warsaw</a> in his free time
+          </p>
+        </div> <!-- /info -->
+      </div> <!-- /intro -->
       {{ content }}
-    </section>
-    <footer>
-      <p><em>the blog</em> is a blog by <a href="http://twitter.com/p_ch">@p_ch</a></p>
-    </footer>
-  </div>
-</body>
+    </div> <!-- /body-wrapper -->
+
+  </body>
 </html>

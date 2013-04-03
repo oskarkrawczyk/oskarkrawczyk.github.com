@@ -1,5 +1,6 @@
+auto: true
 markdown: rdiscount
 pygments: true
-permalink: /:title.html
+permalink: /:title
 rdiscount:
   extensions: [smart, footnotes]
