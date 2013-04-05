@@ -1,0 +1,325 @@
+@import 'mixins';
+@import 'media-queries';
+@import url(http://fonts.googleapis.com/css?family=Raleway:100,200,400,600);
+
+$color: rgba(79, 35, 39, .3);
+$colorTransparent: rgba(79, 35, 39, 0);
+$colorDarker: darken($color, 20);
+$mixed: darken(mix(#F27358, #F46575), 20);
+$mixedLighter: mix(#F27358, #F46575);
+$raleway: 'Raleway', 'Helvetica Neue', Helvetica, Verdana, Tahoma, sans-serif;
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Verdana, Tahoma, sans-serif;
+  @include horizontal-gradient(#F27358, #F46575);
+}
+
+.noScroll {
+  overflow: hidden;
+}
+
+a {
+  color: #fff;
+  font-weight: 500;
+
+  &:hover {
+    border-bottom: solid 1px #fff;
+  }
+}
+
+small {
+  font-size: .7em;
+}
+
+#body-wrapper {
+  height: 100%;
+  text-align: center;
+  background: url(/images/bg@2x.jpg) 50% 0 no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  font-family: $raleway;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#intro {
+
+}
+
+  #intro h1 {
+    padding: 65px 0 10px;
+    font-size: 2.5em;
+    letter-spacing: 5px;
+    font-weight: 400;
+  }
+
+  #intro h2 {
+    font-size: 1.0em;
+    font-weight: 200;
+    margin: 0 0 35px;
+  }
+
+  #intro .info {
+    margin: 0 auto 35px;
+    width: 470px;
+    position: relative;
+    padding: 18px 0;
+    font-size: 1.4em;
+    border-top: solid 1px $color;
+    border-bottom: solid 1px $color;
+  }
+
+  #intro .info p {
+    width: 800px;
+    margin-left: -170px;
+  }
+
+#moments {
+}
+
+  .me {
+    height: 160px;
+    width: 160px;
+    border-radius: 160px;
+    border: solid 5px #fff;
+    margin: 0 auto;
+    background: #fff url(/images/me.jpg);
+
+    @include hdpi(2) {
+      background: #fff url(/images/me@2x.jpg);
+      background-size: 160px;
+    }
+  }
+
+  #moments h3 {
+    font-size: 1.0em;
+    font-weight: 200;
+    margin: 25px 0 0;
+  }
+
+  #moments ul {
+    width: 2px;
+    margin: 60px auto;
+    position: relative;
+  }
+
+  #moments ul li {
+    width: 2px;
+    background: $color;
+    position: relative;
+  }
+
+  #moments ul li {
+    width: 2px;
+    height: 60px;
+    background: $color;
+    position: relative;
+    margin-bottom: 14px;
+  }
+
+  #moments ul li:last-child {
+    background: none;
+  }
+
+  #moments ul li .dot {
+    position: absolute;
+    top: -14px;
+    left: -6px;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: $color;
+    border-radius: 14px;
+
+    &:after {
+      position: absolute;
+      bottom: 4px;
+      left: 4px;
+      content: ' ';
+      display: block;
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      border-radius: 6px;
+    }
+  }
+
+  #moments ul li .momentBody {
+    height: 48px;
+    position: absolute;
+    left: 38px;
+    top: -31px;
+    background: $color;
+    text-align: left;
+    padding: 0 10px;
+    white-space: nowrap;
+    opacity: 0;
+
+    &:hover {
+      border-bottom: none;
+      background: $colorDarker;
+    }
+  }
+
+    #moments ul li .momentBody strong {
+      font-weight: 200;
+      font-size: .8em;
+      margin: 6px 0 2px;
+      display: block;
+    }
+
+    #moments ul li .momentBody p {
+      font-weight: 400;
+      font-size: .9em;
+      letter-spacing: 1px;
+    }
+
+  #moments ul li.odd .momentBody {
+
+    &:hover {
+      &:after {
+        border-right: 20px solid $colorDarker;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      content: ' ';
+      border-bottom: 24px solid transparent;
+      border-top: 24px solid transparent;
+      border-right: 20px solid $color;
+      top: 0;
+      left: -20px;
+    }
+  }
+
+  #moments ul li.even .momentBody {
+    left: -100%;
+
+    &:hover {
+      &:after {
+        border-left: 20px solid $colorDarker;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      content: ' ';
+      border-top: 24px solid transparent;
+      border-bottom: 24px solid transparent;
+      border-left: 20px solid $color;
+      top: 0;
+      right: -20px;
+    }
+  }
+
+#blog a {
+  color: $mixed;
+}
+
+#blog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #3f3f3f;
+  display: none;
+  overflow: auto;
+  opacity: 0;
+}
+
+  #blog  .me {
+    height: 120px;
+    width: 120px;
+    border: none;
+
+    @include hdpi(2) {
+      background-size: 120px;
+    }
+  }
+
+  #blog .blogInfo {
+    width: 580px;
+    margin: 20px auto 0;
+    text-align: center;
+    font-family: $raleway;
+  }
+
+  #blog .blogInfo h2 {
+    margin: 20px 0 10px;
+    font-size: 2.5em;
+    font-weight: 300;
+
+  }
+
+  #blog .blogInfo h3 {
+    font-family: $raleway;
+    text-transform: uppercase;
+    font-size: .8em;
+
+  }
+
+  #blog .hideBlog {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: $mixedLighter;
+    color: #fff;
+    padding: 8px;
+    font-family: $raleway;
+    text-transform: uppercase;
+    font-size: .7em;
+  }
+
+#post {
+  width: 580px;
+  margin: 40px auto;
+}
+
+  #post ul,
+  #post ol {
+    margin: 15px 0;
+  }
+
+  #post p {
+    margin: 15px 0;
+  }
+
+  #post a:hover {
+    border-bottom: solid 1px $mixed;
+  }
+
+  #post li {
+    line-height: 1.5em;
+    margin: 5px 0 5px 50px;
+    list-style: disc;
+  }
+
+  #post ul li {
+    list-style: disc;
+  }
+
+  #post ol li {
+    list-style: decimal-leading-zero;
+  }
+
+  #post code {
+    font-size: .7em;
+    font-family: Monaco, monospace;
+    background: #3f3f3f;
+    color: #fff;
+    padding: 2px 4px;
+  }
+
+  #post pre code {
+    display: block;
+    padding: 5px 8px;
+  }
+

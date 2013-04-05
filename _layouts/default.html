@@ -2,16 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/reset.css?spring" type="text/css" media="screen, projection, print" />
-    <link rel="stylesheet" href="css/base.css" type="text/css" media="screen, projection" />
-    <link rel="shortcut icon" href="images/favicons/favicon.ico" />
+    <!-- <link rel="shortcut icon" href="images/favicons/favicon.ico" /> -->
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mootools/1.4.5/mootools-core-full-nocompat-yc.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mootools-more/1.4.0.1/mootools-more-yui-compressed.js"></script>
-    <script type="text/javascript" src="//raw.github.com/chjj/marked/master/lib/marked.js"></script>
-    <script type="text/javascript" src="/javascripts/moofx.js"></script>
-    <script type="text/javascript" src="/javascripts/utilities.js"></script>
-    <script type="text/javascript" src="/javascripts/base.js"></script>
+
+    {% css_asset_tag global %}
+    - /_assets/scss/reset.scss
+    - /_assets/scss/pygments.scss
+    - /_assets/scss/screen.scss
+    {% endcss_asset_tag %}
+
+    {% javascript_asset_tag global %}
+    - /_assets/coffeescript/moofx.js
+    - /_assets/coffeescript/utilities.coffee
+    - /_assets/coffeescript/base.coffee
+    {% endjavascript_asset_tag %}
 
     <link rel="alternate" href="http://theblog.org/feed" type="application/rss+xml" />
 
