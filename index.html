@@ -13,7 +13,7 @@ head_content:
       <li class="moment">
         <span class="dot"></span>
         <a class="momentBody" href="{{ post.url | replace: '.html', '' }}" data-post-title="{{ post.title }}">
-          <strong class="date">{{ post.date | date: "%B %e, %Y" }}</strong>
+          <strong class="date">{{ post.date | date: "%e %B %Y" }}</strong>
           <p>{{ post.title }}</p>
           <!-- {{ post.summary }} -->
         </a>
