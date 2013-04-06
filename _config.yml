@@ -1,6 +1,6 @@
 auto: true
 markdown: rdiscount
 pygments: true
-permalink: /:title
+permalink: /blog/:title
 rdiscount:
   extensions: [smart, footnotes]

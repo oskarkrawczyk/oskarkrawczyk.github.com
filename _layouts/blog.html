@@ -11,6 +11,7 @@
     - /_assets/scss/reset.scss
     - /_assets/scss/pygments.scss
     - /_assets/scss/screen.scss
+    - /_assets/scss/blog.scss
     {% endcss_asset_tag %}
 
     {% javascript_asset_tag global %}
@@ -31,20 +32,15 @@
   </head>
   <body>
 
-    <div id="body-wrapper">
-      <div id="intro">
-        <h1>Oskar Krawczyk</h1>
-        <h2><small>of</small> Nouincolor</h2>
-        <div class="info">
-          <p>
-            Co-created <a title="JSFiddle" href="http://jsfiddle.net">JSFiddle</a> and <a title="Positionly" href="https://positionly.com">Positionly</a><br />
-            Loves <a title="" href="#">coffee</a>, creates <a title="" href="https://github.com/oskarkrawczyk">things</a>, <a title="" href="/blog">blogs</a> and <a title="" href="https://twitter.com/oskar">tweets</a><br />
-            Cycles all around <a title="Warsaw" href="http://en.wikipedia.org/wiki/Warsaw">Warsaw</a> in his free time
-          </p>
-        </div> <!-- /info -->
-      </div> <!-- /intro -->
-      {{ content }}
-    </div> <!-- /body-wrapper -->
+    <div id="blog">
+      <a href="/" class="hideBlog">Back to posts</a>
+      <div class="blogInfo">
+        <div class="me"></div>
+      </div> <!-- /blogInfo -->
+      <div id="posts">
+        {{ content }}
+      </div> <!-- /posts -->
+    </div> <!-- /blog -->
 
   </body>
 </html>

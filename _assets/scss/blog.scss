@@ -1,0 +1,114 @@
+@import 'mixins';
+@import 'media-queries';
+@import url(http://fonts.googleapis.com/css?family=Raleway:100,200,400,600);
+
+body {
+  color: #000;
+  font-family: 'Helvetica Neue', Helvetica, Verdana, Tahoma, sans-serif;
+  background: #fff;
+}
+
+#blog a {
+  color: $mixed;
+}
+
+#blog {
+  color: #3f3f3f;
+}
+
+  #blog .me {
+    height: 120px;
+    width: 120px;
+    border: none;
+
+    @include hdpi(2) {
+      background-size: 120px;
+    }
+  }
+
+  #blog .blogInfo {
+    width: 580px;
+    margin: 40px auto 0;
+    text-align: center;
+    font-family: $raleway;
+  }
+
+  #blog .blogInfo h1 {
+    margin: 20px 0 10px;
+    font-size: 2.5em;
+    font-weight: 300;
+  }
+
+  #blog .hideBlog {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: $mixedLighter;
+    color: #fff;
+    padding: 8px;
+    font-family: $raleway;
+    text-transform: uppercase;
+    font-size: .7em;
+  }
+
+#posts {
+  width: 580px;
+  margin: 40px auto;
+}
+
+  #posts .post h1 {
+    margin: 20px 0 40px;
+    font-size: 2.5em;
+    font-weight: 300;
+    text-align: center;
+    font-family: $raleway;
+  }
+
+  #posts .postBody ul,
+  #posts .postBody ol {
+    margin: 15px 0;
+  }
+
+  #posts .postBody p {
+    margin: 15px 0;
+  }
+
+  #posts .postBody a:hover {
+    border-bottom: solid 1px $mixed;
+  }
+
+  #posts .postBody li {
+    line-height: 1.5em;
+    margin: 5px 0 5px 50px;
+    list-style: disc;
+  }
+
+  #posts .postBody ul li {
+    list-style: disc;
+  }
+
+  #posts .postBody ol li {
+    list-style: decimal-leading-zero;
+  }
+
+  #posts .postBody code {
+    font-size: .7em;
+    font-family: Monaco, monospace;
+    background: #3f3f3f;
+    color: #fff;
+    padding: 2px 4px;
+  }
+
+  #posts .postBody pre code {
+    display: block;
+    padding: 5px 8px;
+  }
+
+  #posts .postDate {
+    font-family: $raleway;
+    text-transform: uppercase;
+    font-size: .8em;
+    margin-top: 40px;
+    text-align: center;
+  }
+

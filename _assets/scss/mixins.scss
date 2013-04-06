@@ -1,3 +1,10 @@
+$color: rgba(79, 35, 39, .3);
+$colorTransparent: rgba(79, 35, 39, 0);
+$colorDarker: darken($color, 20);
+$mixed: darken(mix(#F27358, #F46575), 20);
+$mixedLighter: mix(#F27358, #F46575);
+$raleway: 'Raleway', 'Helvetica Neue', Helvetica, Verdana, Tahoma, sans-serif;
+
 @mixin linear-gradient($start, $end){
   background-color: $start;
   background: -moz-linear-gradient(top, $start 0%, $end 100%); /* FF3.6+ */

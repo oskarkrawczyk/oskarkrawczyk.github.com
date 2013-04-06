@@ -26,16 +26,9 @@ class Base extends Utilities
     @animate 'opacity', 1
 
   showMoments: (post, index) =>
-    odd = @isOdd index
-
-    klass = if odd then 'odd' else 'even'
-    post.addClass klass
-
-    # inject post
-    # element.inject @elements.timeline
+    odd = post.hasClass 'odd'
 
     moment = post.getElement '.momentBody'
-    # moment = moment.pop()
 
     # reposition even moments
     moment.setStyle 'left', - (moment.getSize().x + 35) if not odd

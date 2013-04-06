@@ -1,18 +1,19 @@
 ---
-layout: default
+layout: blog
 head_content:
   <link rel="alternate" type="application/atom+xml" href="http://pch.im/feed/" />
 ---
 
 <div id="moments">
+  BLOG
   <div class="me"></div>
   <h3><small>and his</small> thoughts</h3>
   <ul id="timeline">
     {% for post in site.posts %}
       {% unless forloop.first %}{% endunless %}
-      <li class="moment {% cycle 'odd', 'even' %}">
+      <li class="moment">
         <span class="dot"></span>
-        <a class="momentBody" href="{{ post.url | replace: '.html', '' }}">
+        <a class="momentBody" href="{{ post.url | replace: '.html', '' | prepend: '/blog' }}">
           <strong class="date">{{ post.date | date: "%e %B %Y" }}</strong>
           <p>{{ post.title }}</p>
           <!-- {{ post.summary }} -->
