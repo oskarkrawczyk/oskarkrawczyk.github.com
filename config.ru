@@ -4,6 +4,7 @@ require 'rack/request'
 require 'rack/rewrite'
 require 'rack/contrib/try_static'
 
+
 use Rack::Deflater
 # also, look into Rack::ETag
 
@@ -16,3 +17,7 @@ run lambda { |env| [404, {
   'Content-Type'   => 'text/html' ,
   'Content-Length' => File.size(error_file).to_s },[ File.read(error_file)] ]
 }
+
+require 'rack/jekyll'
+
+run Rack::Jekyll.new

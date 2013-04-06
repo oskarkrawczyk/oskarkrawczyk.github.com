@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'jekyll'
+gem 'rack-jekyll'
+gem 'RedCloth'
 gem 'rack-contrib'
 gem 'rack-rewrite'
 gem 'rdiscount'
