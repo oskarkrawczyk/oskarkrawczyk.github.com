@@ -1,5 +1,5 @@
 ---
-title: The Magic Video App
+title: The Magical Video App
 summary: Software
 layout: post
 ---
