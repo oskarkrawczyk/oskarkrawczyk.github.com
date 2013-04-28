@@ -1,5 +1,5 @@
 auto: true
-# markdown: redcarpet
+markdown: rdiscount
 pygments: true
 permalink: /blog/:title
 rdiscount:
