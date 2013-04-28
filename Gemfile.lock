@@ -8,9 +8,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.5.0)
-    daemons (1.1.9)
     directory_watcher (1.4.1)
-    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     fast-stemmer (1.0.2)
@@ -30,6 +28,8 @@ GEM
       syntax (>= 1.0.0)
     multi_json (1.0.4)
     posix-spawn (0.3.6)
+    puma (1.6.3)
+      rack (~> 1.2)
     pygments.rb (0.3.7)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
@@ -40,13 +40,9 @@ GEM
       jekyll (~> 0.12.0)
       rack (~> 1.5.0)
     rack-rewrite (1.3.3)
-    rdiscount (2.0.7.1)
+    rdiscount (2.0.7.2)
     sass (3.2.6)
     syntax (1.0.0)
-    thin (1.5.0)
-      daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
-      rack (>= 1.0.0)
     yajl-ruby (1.1.0)
 
 PLATFORMS
@@ -57,9 +53,9 @@ DEPENDENCIES
   coffee-script
   jekyll
   jekyll-asset-pipeline
+  puma (~> 1.6.3)
   rack-contrib
   rack-jekyll
   rack-rewrite
   rdiscount
   sass
-  thin
