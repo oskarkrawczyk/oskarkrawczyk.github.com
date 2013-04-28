@@ -3,12 +3,17 @@ require 'bundler/setup'
 require 'rack/request'
 require 'rack/rewrite'
 require 'rack/contrib/try_static'
+require 'rack/contrib/not_found'
 
+run Rack::NotFound.new('_site/404.html')
 
 use Rack::Deflater
 # also, look into Rack::ETag
 
-use Rack::TryStatic, :root => "_site", :urls => %w[/], :try => ['.html', 'index.html', '/index.html']
+use Rack::TryStatic,
+  :root => "_site",
+  :urls => %w[/],
+  :try => ['.html', 'index.html', '/index.html']
 
 # Serve the 404 error page
 error_file = '_site/404.html'
@@ -17,7 +22,3 @@ run lambda { |env| [404, {
   'Content-Type'   => 'text/html' ,
   'Content-Length' => File.size(error_file).to_s },[ File.read(error_file)] ]
 }
-
-require 'rack/jekyll'
-
-run Rack::Jekyll.new
