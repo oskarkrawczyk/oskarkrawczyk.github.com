@@ -20,8 +20,10 @@ body {
     height: 120px;
     width: 120px;
     border: none;
+    background: #fff url(/images/me.jpg);
 
     @include hdpi(2) {
+      background: #fff url(/images/me@2x.jpg);
       background-size: 120px;
     }
   }
@@ -69,6 +71,10 @@ body {
     font-family: $raleway;
   }
 
+  #posts .post a:hover {
+    border-bottom: solid 1px $mixed;
+  }
+
   #posts .postBody ul,
   #posts .postBody ol {
     margin: 15px 0;
@@ -76,10 +82,6 @@ body {
 
   #posts .postBody p {
     margin: 15px 0;
-  }
-
-  #posts .postBody a:hover {
-    border-bottom: solid 1px $mixed;
   }
 
   #posts .postBody li {
