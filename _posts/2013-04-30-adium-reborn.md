@@ -8,11 +8,14 @@ Can you believe there are only two worthy chat applications for the Mac? First p
 successfully degrading in quality. Second, Adium, developed by the Open Source community.
 
 The former, Messages, looks great but is just a ridiculous bug–fest. Hardly anything works as it should. The latter,
-works fantastic, but looks like it just DeLorean-time-jumped from the early 2000’s.
+works fantastic, but looks like it just DeLorean-time-jumped from the early 2000’s – with no disrespect to the Adium team,
+I have a lot of respect for them.
 
 Taking all of the above in account, and you get a lovely space in the market.
-[Dawid Liberadzki](http://dribbble.com/liberadzki) and I decided to create a case
-where we modify how Adium looks, below is the result (click to see the full presentation).
+[Dawid Liberadzki](http://dribbble.com/liberadzki) and I decided to create a Case Study
+where we modify how Adium looks, below is the result.
+
+[See the full presentation](http://elpassion.pl/adium-concept/adium.html)
 
 <a href="http://elpassion.pl/adium-concept/adium.html"><img src="/blog_assets/2013-04-30/chat.png" width="950" height="710" style="margin-left: -215px;" /></a>
 
@@ -31,4 +34,4 @@ has – an intelligent input that figures out the stuff you’re trying to do, l
 
 As you can imagine, the possiblities are pretty much endless.
 
-Now, who wants to fork Adium or start from scratch and make this UI happen?
+Now, who wants to <del>fork Adium or start from scratch and</del> make this UI happen?
