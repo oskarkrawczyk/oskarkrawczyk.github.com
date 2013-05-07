@@ -20,7 +20,14 @@
     - /_assets/coffeescript/base.coffee
     {% endjavascript_asset_tag %}
 
-    <link rel="alternate" href="http://nouincolor.com/feed" type="application/rss+xml" />
+    <link rel="alternate" href="http://nouincolor.com/feed/" type="application/rss+xml" />
+
+    <meta name="twitter:creator" content="@oskar" />
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% endif %}" />
+
+    <meta property="og:site_name" content="Nouincolor" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% endif %}" />
+    <meta property="og:type" content="blog post" />
 
     <title>
       {% if page.title %}

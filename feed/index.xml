@@ -1,25 +1,26 @@
 ---
 layout: nil
 ---
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Oskar Krawczyk</title>
-  <link href="http://nouncolor.com/feed" rel="self"/>
-  <link href="http://nouncolor.com/"/>
-  <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>http://nouncolor.com/</id>
-  <author>
-    <name>Oskar Krawczyk</name>
-    <email>thereis@nouincolor.com</email>
-  </author>
+<rss version="2.0">
+  <channel>
+    <title>Oskar Krawczyk - Nouincolor</title>
+    <link>http://nouncolor.com/</link>
+    <description></description>
 
-  {% for post in site.posts %}
-    <entry>
-      <title>{{ post.title | xml_escape }}</title>
-      <link href="http://nouncolor.com/blog{{ post.url | replace: '.html', ''  }}" />
-      <updated>{{ post.date | date_to_xmlschema }}</updated>
-      <id>http://nouncolor.com/blog{{ post.id }}</id>
-      <content type="html">{{ post.content | xml_escape }}</content>
-    </entry>
-  {% endfor %}
-</feed>
+    {% for post in site.posts %}
+      <item>
+        <title>{{ post.title | xml_escape }}</title>
+        <link>
+          http://nouncolor.com{{ post.url | replace: '.html', ''  }}
+        </link>
+        <guid isPermaLink="false">
+          http://nouncolor.com{{ post.url | replace: '.html', ''  }}
+        </guid>
+        <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+        <description>
+          {{ post.content | xml_escape }}
+        </description>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>
