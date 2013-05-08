@@ -39,8 +39,22 @@
   </head>
   <body>
 
+    <div id="sidebar">
+      <ul class="posts">
+        {% for post in site.posts %}
+          <li class="">
+            <a class="momentBody" href="{{ post.url | replace: '.html', '' | prepend: '/blog' }}">
+              <h3>{{ post.title }}</h3>
+              <!-- <p>{{ post.summary }}</p> -->
+              <strong class="date">{{ post.date | date: "%e %B %Y" }}</strong>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
     <div id="blog">
-      <a href="/" class="hideBlog">Back to posts</a>
+      <a href="/" id="show-sidebar" class="hideBlog">&equiv;</a>
       <div class="blogInfo">
         <div class="me"></div>
       </div> <!-- /blogInfo -->

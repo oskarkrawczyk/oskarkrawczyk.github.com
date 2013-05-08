@@ -3,17 +3,59 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:100,200,400,600);
 
 body {
-  color: #000;
   font-family: 'Helvetica Neue', Helvetica, Verdana, Tahoma, sans-serif;
+  background: #f1f1f1;
+  position: relative;
+  color: #3f3f3f;
+}
+
+#sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+}
+
+  #sidebar .posts a {
+    color: #3f3f3f;
+    display: block;
+    padding: 10px;
+    border-bottom: solid 1px #d8d8d8;
+    font-size: .9em;
+
+    &:hover {
+      border-bottom: solid 1px #d8d8d8;
+      color: $mixed;
+    }
+  }
+
+  #sidebar .posts h3 {
+    font-weight: 400;
+  }
+
+  #sidebar .posts p {
+    font-size: .9em;
+  }
+
+  #sidebar .posts .date {
+    font-size: .7em;
+    font-weight: 200;
+    color: #7f7f7f;
+  }
+
+  #sidebar .posts li {
+
+  }
+
+#blog {
   background: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.55);
 }
 
 #blog a {
   color: $mixed;
-}
-
-#blog {
-  color: #3f3f3f;
 }
 
   #blog .me {
@@ -45,12 +87,16 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    background: $mixedLighter;
+    background: $mixedLighter; // $mixedLighter
     color: #fff;
-    padding: 8px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
     font-family: $raleway;
     text-transform: uppercase;
-    font-size: .7em;
+    font-size: 1.2em;
+    border-radius: 2px;
   }
 
 #posts {

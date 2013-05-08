@@ -1,6 +1,6 @@
 ---
 title: The Magical Video App
-summary: Software
+category: Software
 layout: post
 ---
 

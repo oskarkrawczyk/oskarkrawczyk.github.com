@@ -1,6 +1,7 @@
 ---
 title: The Obligatory
-summary: Personal
+category: Personal
+summary: It only seems apropriate that I should at least say Hello.
 layout: post
 ---
 
