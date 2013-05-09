@@ -7,23 +7,22 @@ class Base extends Utilities
       body: document.body
       sidebar: document.id 'sidebar'
       blog: document.id 'blog'
+      posts: document.id 'posts'
       timeline: document.id 'timeline'
       branchIt: document.id 'branch-it'
-      showSidebar: document.id 'show-sidebar'
+      toggleSidebar: document.id 'toggle-sidebar'
       allMoments: document.getElements '.moment'
 
     @events =
       branchIt:
         click: @branchIt
-      showSidebar:
-        click: @showSidebar
-      # timeline:
-      #   'click:relay(a)': @showPost
-      # blog:
-      #   'click:relay(a.hideBlog)': @hideBlog
-      # document:
-      #   keydown: (event) =>
-      #     @hideBlog() if event.key is 'esc'
+      toggleSidebar:
+        click: @toggleSidebar
+      sidebar:
+        'click:relay(a)': @showPost
+      body:
+        keydown: (event) =>
+          @toggleSidebar event if event.key is 'esc'
 
     @setup()
 
@@ -45,7 +44,7 @@ class Base extends Utilities
     script.src = 'https://secure.branch.com/assets/bookmarklet/bookmarklet.m.js'
     document.body.appendChild script
 
-  showSidebar: (event) =>
+  toggleSidebar: (event) =>
     event.stop()
 
     # longer duration when holding shift
@@ -97,6 +96,32 @@ class Base extends Utilities
 
     # show moments
     @showMoment.delay index * 200, moment
+
+  showPost: (event, element) =>
+    event.stop()
+
+    li = element.getParent 'li'
+    siblings = li.getSiblings 'li'
+    siblings.removeClass 'selected'
+    li.addClass 'selected'
+
+    href = element.get 'href'
+    request = new Request
+      url: href
+      onComplete: (response) =>
+        @loadPost response, href
+
+    request.get()
+
+  loadPost: (response, href) =>
+    elements = Elements.from response
+    posts = elements.getElement '#posts'
+    posts = posts.pop()
+    posts.set 'id', ''
+    @elements.posts.empty()
+    @elements.posts.adopt posts
+
+    @pushState document.title, href # fetch the correct title
 
 window.addEvents
   domready: ->

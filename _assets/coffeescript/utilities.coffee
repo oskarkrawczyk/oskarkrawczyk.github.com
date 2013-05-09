@@ -21,11 +21,5 @@ class @Utilities
   isOdd: (index) ->
     index % 2 is 0
 
-  template:
-
-    get: (templateFor) ->
-      template = document.getElement "script[data-template-for=#{templateFor}]"
-      template.get 'text' if template
-
-    parse: (template, subs) ->
-      Elements.from template.substitute subs
+  pushState: (title, url) ->
+    history.pushState {}, title, url
