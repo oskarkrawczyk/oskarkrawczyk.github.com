@@ -40,6 +40,7 @@ class Base extends Utilities
 
   showSidebar: (event) =>
     event.stop()
+
     if @siebarOpen
       width = 0
       shadow = '0 0 200px rgba(0, 0, 0, 0.55)'
@@ -53,7 +54,7 @@ class Base extends Utilities
       'margin-left': width
       'box-shadow': shadow
     ,
-      duration: 800
+      duration: if event.shift then 3000 else 800
 
   showMoment: (moment) ->
     @animate 'opacity', 1
