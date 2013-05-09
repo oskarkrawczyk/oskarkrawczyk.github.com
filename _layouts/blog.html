@@ -42,7 +42,7 @@
     <div id="sidebar">
       <ul class="posts">
         {% for post in site.posts %}
-          <li class="">
+          <li class="{% if page.title == post.title %}selected{% endif %}">
             <a class="momentBody" href="{{ post.url | replace: '.html', '' }}">
               <h3>{{ post.title }}</h3>
               <!-- <p>{{ post.summary }}</p> -->

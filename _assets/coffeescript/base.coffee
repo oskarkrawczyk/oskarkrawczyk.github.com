@@ -1,9 +1,11 @@
 class Base extends Utilities
 
   constructor: ->
+    @transformFrom = 'scale(0.95)'
     @sidebarOpen = false
-    @activePost = null
     @elements =
+      body: document.body
+      sidebar: document.id 'sidebar'
       blog: document.id 'blog'
       timeline: document.id 'timeline'
       branchIt: document.id 'branch-it'
@@ -29,6 +31,11 @@ class Base extends Utilities
     @setupEvents @elements, @events
     Array.each @elements.allMoments, @showMoments
 
+    # set default scale for the sidebar... don't want to do that in CSS
+    if @elements.sidebar
+      @elements.sidebar.css
+        transform: @transformFrom
+
   branchIt: (event) ->
     event.stop()
 
@@ -41,20 +48,41 @@ class Base extends Utilities
   showSidebar: (event) =>
     event.stop()
 
+    # longer duration when holding shift
+    duration = if event.shift then 3000 else 800
+
+    # toggle values
     if @siebarOpen
       width = 0
-      shadow = '0 0 200px rgba(0, 0, 0, 0.55)'
+      shadow = '0 0 50px rgba(0, 0, 0, 0.55)'
+      background = '#aaaaaa'
+      transform = @transformFrom
       @siebarOpen = false
     else
       width = 300
       shadow = '0 0 5px rgba(0, 0, 0, 0.15)'
+      transform = 'scale(1)'
+      background = '#f1f1f1'
       @siebarOpen = true
 
+    # animate page
     @elements.blog.animate
-      'margin-left': width
-      'box-shadow': shadow
+      marginLeft: width
+      boxShadow: shadow
     ,
-      duration: if event.shift then 3000 else 800
+      duration: duration
+
+    # animate sidebar
+    @elements.sidebar.animate
+      transform: transform
+    ,
+      duration: duration
+
+    # animate body
+    @elements.body.animate
+      backgroundColor: background
+    ,
+      duration: duration
 
   showMoment: (moment) ->
     @animate 'opacity', 1

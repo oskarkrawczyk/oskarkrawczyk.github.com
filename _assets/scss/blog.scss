@@ -4,7 +4,7 @@
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Verdana, Tahoma, sans-serif;
-  background: #f1f1f1;
+  background: #aaaaaa;
   position: relative;
   color: #3f3f3f;
 }
@@ -20,11 +20,11 @@ body {
     color: #3f3f3f;
     display: block;
     padding: 10px;
-    border-bottom: solid 1px #d8d8d8;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.06);
     font-size: .9em;
 
     &:hover {
-      border-bottom: solid 1px #d8d8d8;
+      border-bottom: solid 1px rgba(0, 0, 0, 0.06);
       color: $mixed;
     }
   }
@@ -43,8 +43,8 @@ body {
     color: #7f7f7f;
   }
 
-  #sidebar .posts li {
-
+  #sidebar .posts .selected h3 {
+    font-weight: 600;
   }
 
 #blog {
