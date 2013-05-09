@@ -118,8 +118,16 @@ class Base extends Utilities
     posts = elements.getElement '#posts'
     posts = posts.pop()
     posts.set 'id', ''
-    @elements.posts.empty()
-    @elements.posts.adopt posts
+
+    # animate post
+    @elements.posts.animate
+      opacity: 0
+    ,
+      callback: =>
+        @elements.posts.empty()
+        @elements.posts.adopt posts
+        @elements.posts.animate
+          opacity: 1
 
     @pushState document.title, href # fetch the correct title
 
