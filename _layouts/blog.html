@@ -43,7 +43,7 @@
       <ul class="posts">
         {% for post in site.posts %}
           <li class="">
-            <a class="momentBody" href="{{ post.url | replace: '.html', '' | prepend: '/blog' }}">
+            <a class="momentBody" href="{{ post.url | replace: '.html', '' }}">
               <h3>{{ post.title }}</h3>
               <!-- <p>{{ post.summary }}</p> -->
               <strong class="date">{{ post.date | date: "%e %B %Y" }}</strong>
