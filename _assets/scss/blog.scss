@@ -2,6 +2,10 @@
 @import 'media-queries';
 @import url(http://fonts.googleapis.com/css?family=Raleway:100,200,400,600);
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Helvetica Neue', Helvetica, Verdana, Tahoma, sans-serif;
   background: #aaaaaa;
@@ -14,6 +18,8 @@ body {
   top: 0;
   left: 0;
   width: 300px;
+  overflow: auto;
+  height: 100%;
 }
 
   #sidebar .posts a {
@@ -50,7 +56,8 @@ body {
 #blog {
   background: #fff;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
+  height: 100%;
   box-shadow: 0 0 200px rgba(0, 0, 0, 0.55);
 }
 

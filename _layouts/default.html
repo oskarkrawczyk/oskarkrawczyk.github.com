@@ -38,7 +38,7 @@
         <div class="info">
           <p>
             Co-created <a title="JSFiddle" href="http://jsfiddle.net">JSFiddle</a> and <a title="Positionly" href="https://positionly.com">Positionly</a><br />
-            Loves coffee, creates <a title="" href="https://github.com/oskarkrawczyk">things</a>, <a title="" href="#timeline">blogs</a> and <a title="" href="https://twitter.com/oskar">tweets</a><br />
+            Loves coffee, creates <a title="" href="https://github.com/oskarkrawczyk">things</a>, <a title="" href="{% for post in site.posts %}{% if forloop.first %}{{ post.url | replace: '.html', '' }}{% endif %}{% endfor %}#sidebar">blogs</a> and <a title="" href="https://twitter.com/oskar">tweets</a><br />
             Cycles all around <a title="Warsaw" href="http://en.wikipedia.org/wiki/Warsaw">Warsaw</a> in his free time
           </p>
         </div> <!-- /info -->

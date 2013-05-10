@@ -35,6 +35,8 @@ class Base extends Utilities
       @elements.sidebar.css
         transform: @transformFrom
 
+    @toggleSidebar() if document.location.hash.contains 'sidebar'
+
   branchIt: (event) ->
     event.stop()
 
@@ -45,10 +47,10 @@ class Base extends Utilities
     document.body.appendChild script
 
   toggleSidebar: (event) =>
-    event.stop()
+    event.stop() if event
 
     # longer duration when holding shift
-    duration = if event.shift then 3000 else 800
+    duration = if event and event.shift then 3000 else 800
 
     # toggle values
     if @siebarOpen
@@ -122,14 +124,19 @@ class Base extends Utilities
     # animate post
     @elements.posts.animate
       opacity: 0
+      transform: 'scale(0.96)'
     ,
       callback: =>
-        @elements.posts.empty()
-        @elements.posts.adopt posts
-        @elements.posts.animate
-          opacity: 1
+        @fadeInPost posts
 
-    @pushState document.title, href # fetch the correct title
+    @pushState document.title, href # TODO: fetch the correct title
+
+  fadeInPost: (posts) =>
+    @elements.posts.empty()
+    @elements.posts.adopt posts
+    @elements.posts.animate
+      opacity: 1
+      transform: 'scale(1)'
 
 window.addEvents
   domready: ->
