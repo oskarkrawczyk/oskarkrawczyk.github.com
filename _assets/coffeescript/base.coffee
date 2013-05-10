@@ -122,13 +122,18 @@ class Base extends Utilities
     posts = posts.pop()
     posts.set 'id', ''
 
-    @fadeInPost posts
+    showPost = =>
+      @fadeInPost posts
+
+    showPost.delay 500
     @pushState document.title, href # TODO: fetch the correct title
 
   fadeOutPost: =>
     @elements.posts.animate
       opacity: 0
       transform: 'scale(0.96)'
+    ,
+      duration: 500
 
   fadeInPost: (posts) =>
     @elements.posts.empty()
@@ -136,6 +141,8 @@ class Base extends Utilities
     @elements.posts.animate
       opacity: 1
       transform: 'scale(1)'
+    ,
+      duration: 500
 
 window.addEvents
   domready: ->
