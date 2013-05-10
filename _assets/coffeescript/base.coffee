@@ -110,6 +110,7 @@ class Base extends Utilities
     href = element.get 'href'
     request = new Request
       url: href
+      onRequest: @fadeOutPost
       onComplete: (response) =>
         @loadPost response, href
 
@@ -121,15 +122,13 @@ class Base extends Utilities
     posts = posts.pop()
     posts.set 'id', ''
 
-    # animate post
+    @fadeInPost posts
+    @pushState document.title, href # TODO: fetch the correct title
+
+  fadeOutPost: =>
     @elements.posts.animate
       opacity: 0
       transform: 'scale(0.96)'
-    ,
-      callback: =>
-        @fadeInPost posts
-
-    @pushState document.title, href # TODO: fetch the correct title
 
   fadeInPost: (posts) =>
     @elements.posts.empty()
