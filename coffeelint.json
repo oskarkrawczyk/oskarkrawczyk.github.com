@@ -1,0 +1,69 @@
+{
+  "arrow_spacing": {
+    "level": "error"
+  },
+  "braces_spacing": {
+    "level": "error",
+    "spaces": 0,
+    "empty_object_spaces": 0
+  },
+  "colon_assignment_spacing": {
+    "level": "error",
+    "spacing": {
+      "left": 0
+    }
+  },
+  "eol_last": {
+    "level": "warn"
+  },
+  "indentation": {
+    "value": 2,
+    "level": "error"
+  },
+  "max_line_length": {
+    "value": 160,
+    "level": "warn",
+    "limitComments": true
+  },
+  "no_debugger": {
+    "level": "warn",
+    "console": false
+  },
+  "no_empty_param_list": {
+    "level": "warn"
+  },
+  "no_interpolation_in_single_quotes": {
+    "level": "error"
+  },
+  "no_nested_string_interpolation": {
+    "level": "warn"
+  },
+  "no_plusplus": {
+    "level": "error"
+  },
+  "no_private_function_fat_arrows": {
+    "level": "warn"
+  },
+  "no_stand_alone_at": {
+    "level": "warn"
+  },
+  "no_unnecessary_double_quotes": {
+    "level": "ignore"
+  },
+  "no_unnecessary_fat_arrows": {
+    "level": "warn"
+  },
+  "prefer_english_operator": {
+    "level": "error",
+    "doubleNotLevel": "ignore"
+  },
+  "space_operators": {
+    "level": "error"
+  },
+  "spacing_after_comma": {
+    "level": "warn"
+  },
+  "transform_messes_up_line_numbers": {
+    "level": "warn"
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="public/dist/base.css" media="screen" charset="utf-8">
+    <script src="https://cdn.rawgit.com/stevenschobert/instafeed.js/master/instafeed.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var feed = new Instafeed({
+        get: "user",
+        userId: "427572618",
+        accessToken: "427572618.33afb76.1c728966039a493dbeb18c73401daba3",
+        limit: 4,
+        template: '<a href="{{link}}"><img src="{{image}}" /></a>'
+      });
+      feed.run();
+    </script>
+
+    <title>Oskar Krawczyk</title>
+  </head>
+  <body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+      <defs>
+        <symbol id="icon-instagram" viewBox="0 0 37 32">
+          <title>instagram</title>
+          <path class="path1" d="M28.571 6.857h8v22.857h-36.571v-22.857h8l4.571-4.571h11.429zM35.429 28.571v-20.571h-7.333l-4.571-4.571h-10.476l-4.571 4.571h-7.333v20.571h34.286zM18.286 9.143q3.302 0 5.651 2.349t2.349 5.651-2.349 5.651-5.651 2.349-5.651-2.349-2.349-5.651 2.349-5.651 5.651-2.349zM18.286 24q2.825 0 4.841-2.016t2.016-4.841-2.016-4.841-4.841-2.016-4.841 2.016-2.016 4.841 2.016 4.841 4.841 2.016z"></path>
+        </symbol>
+        <symbol id="icon-mail" viewBox="0 0 37 32">
+          <title>mail</title>
+          <path class="path1" d="M1.143 28.571h34.286v-18.571l-16.476 12.063h-1.333l-16.476-12.063v18.571zM18.286 21.143l17.143-12.571v-5.143h-34.286v5.143zM36.571 2.286v27.429h-36.571v-27.429h36.571z"></path>
+        </symbol>
+      </defs>
+    </svg>
+
+    <section>
+      <h1><a href="/"><span>Oskar Krawczyk</span></a></h1>
+      <h2>
+        Creator of <a href="https://jsfiddle.net" target="_blank">JSFiddle</a>,
+        <a href="https://headwayapp.co" target="_blank">Headway</a> and
+        <a href="https://positionly.com" target="_blank">Positionly</a>.<br>
+        <a href="https://github.com/oskarkrawczyk" target="_blank">Coder</a>, longboarder, cyclist, <a href="https://instagram.com/oskarkrawczyk" target="_blank">photgrapher</a> at times.<br>
+        <a href="https://www.youtube.com/watch?v=QDv-2EGW8a4" target="_blank">Warsaw</a>-based, freshly roasted coffee buff.<br>
+      </h2>
+
+      <div class="contItem">
+        <div class="iconSection">
+          <svg class="icon icon-instagram"><use xlink:href="#icon-instagram"></use></svg>
+        </div>
+        <div id="instafeed"></div>
+      </div>
+
+      <div class="contItem">
+        <div class="iconSection">
+          <svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg>
+        </div>
+        <a class="mail" href="mailto:oskar.krawczyk@gmail.com">Get in touch</a>
+      </div>
+
+    </section>
+
+    <script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:2001/browser-sync/browser-sync-client.2.13.0.js'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
+  </body>
+</html>

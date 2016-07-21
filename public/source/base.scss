@@ -1,0 +1,220 @@
+@font-face {
+  font-family: 'Graphik Web';
+  src: url('/public/source/fonts/graphik/Graphik-Light-Web.eot');
+  src: url('/public/source/fonts/graphik/Graphik-Light-Web.eot?#iefix') format('embedded-opentype'),
+       url('/public/source/fonts/graphik/Graphik-Light-Web.woff2') format('woff2'),
+       url('/public/source/fonts/graphik/Graphik-Light-Web.woff') format('woff');
+  font-weight:  300;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+.Graphik-Light-Web {
+  font-family: 'Graphik Web';
+  font-weight:  300;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik Web';
+  src: url('/public/source/fonts/graphik/Graphik-Medium-Web.eot');
+  src: url('/public/source/fonts/graphik/Graphik-Medium-Web.eot?#iefix') format('embedded-opentype'),
+       url('/public/source/fonts/graphik/Graphik-Medium-Web.woff2') format('woff2'),
+       url('/public/source/fonts/graphik/Graphik-Medium-Web.woff') format('woff');
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+.Graphik-Medium-Web {
+  font-family: 'Graphik Web';
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik Web';
+  src: url('/public/source/fonts/graphik/Graphik-Regular-Web.eot');
+  src: url('/public/source/fonts/graphik/Graphik-Regular-Web.eot?#iefix') format('embedded-opentype'),
+       url('/public/source/fonts/graphik/Graphik-Regular-Web.woff2') format('woff2'),
+       url('/public/source/fonts/graphik/Graphik-Regular-Web.woff') format('woff');
+  font-weight:  400;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+.Graphik-Regular-Web {
+  font-family: 'Graphik Web';
+  font-weight:  400;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+$color-text: #fff;
+$font-sans-serif: "Graphik Web", "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;
+
+body {
+  padding: 50px 0;
+  background: #1A1A1A;
+  color: $color-text;
+  font-family: $font-sans-serif;
+  font-size: 17px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+}
+
+.icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.iconSection {
+  background: rgba(#fff, 0.05);
+  border-radius: 100%;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  color: rgba(#fff, 0.8);
+  position: absolute;
+  left: -80px;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contItem {
+  position: relative;
+  margin-top: 60px;
+}
+
+.mail {
+  height: 55px;
+  line-height: 55px;
+  border-radius: 55px;
+  background: #304FFE;
+  color: #fff;
+  font-weight: 400;
+  display: inline-block;
+  padding: 0 30px;
+}
+
+h1, h2, h3, p, a {
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-weight: 300;
+}
+
+*, body, button, input, textarea, select {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+section {
+  width: 610px;
+  margin: 0 auto;
+}
+
+h1 {
+  padding-bottom: 90px;
+
+  a {
+    white-space: nowrap;
+    color: rgba(#fff, 0.3);
+    text-transform: uppercase;
+    display: block;
+    width: 70px;
+    height: 70px;
+    border: solid 13px #304FFE;
+    border-radius: 70px;
+    position: relative;
+
+
+    span {
+      position: absolute;
+      left: -13px;
+      top: 85px;
+      letter-spacing: 6px;
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      background: #304FFE;
+      height: 12px;
+      width: 26px;
+      position: absolute;
+    }
+
+    &:before {
+      top: 11px;
+      right: 0px;
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      bottom: 11px;
+      right: 0px;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+h2 {
+  line-height: 1.9rem;
+  font-size: 1.25rem;
+  letter-spacing: 3px;
+
+  a {
+    border-bottom: solid 2px #304FFE;
+    padding-bottom: 1px;
+
+    &:hover {
+      border-bottom: solid 2px #304FFE;
+    }
+  }
+
+  // &:after {
+  //   margin-top: 50px;
+  //   content: "";
+  //   display: block;
+  //   border-bottom: solid 2px #304FFE;
+  //   width: 100px;
+  // }
+}
+
+#instafeed {
+  display: flex;
+  flex-wrap: wrap;
+  height: 150px;
+
+  a {
+    margin: 1px 1px 0 0;
+  }
+
+  img, a {
+    // width: 130px;
+  }
+}
