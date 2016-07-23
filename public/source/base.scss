@@ -53,16 +53,17 @@
 }
 
 $color-text: #fff;
+$color-bg: #1A1A1A;
 $font-sans-serif: "Graphik Web", "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;
 
 body {
   padding: 50px 0;
-  background: #1A1A1A;
+  margin: 0;
+  background: $color-bg;
   color: $color-text;
   font-family: $font-sans-serif;
   font-size: 17px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 a {
@@ -104,13 +105,43 @@ img {
 
 .mail {
   height: 55px;
-  line-height: 55px;
   border-radius: 55px;
   background: #304FFE;
   color: #fff;
   font-weight: 400;
-  display: inline-block;
-  padding: 0 30px;
+  padding: 0 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  white-space: nowrap;
+  z-index: 200;
+  transition: all 0.3s;
+  width: 150px;
+
+  span {
+    opacity: 1;
+  }
+
+  svg {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    opacity: 0;
+  }
+
+  &.active {
+    background: $color-bg;
+    width: 85px;
+
+    svg {
+      opacity: 1;
+    }
+
+    span {
+      opacity: 0;
+    }
+  }
 }
 
 h1, h2, h3, p, a {
@@ -131,7 +162,7 @@ h1, h2, h3, p, a {
   -moz-osx-font-smoothing: grayscale;
 }
 
-section {
+.mCont {
   width: 610px;
   margin: 0 auto;
 }
@@ -149,7 +180,6 @@ h1 {
     border: solid 13px #304FFE;
     border-radius: 70px;
     position: relative;
-
 
     span {
       position: absolute;
@@ -195,14 +225,6 @@ h2 {
       border-bottom: solid 2px #304FFE;
     }
   }
-
-  // &:after {
-  //   margin-top: 50px;
-  //   content: "";
-  //   display: block;
-  //   border-bottom: solid 2px #304FFE;
-  //   width: 100px;
-  // }
 }
 
 #instafeed {
@@ -213,8 +235,43 @@ h2 {
   a {
     margin: 1px 1px 0 0;
   }
+}
 
-  img, a {
-    // width: 130px;
+.mailSpander {
+  background: rgba(#304FFE, 0.95);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.7s ease-in-out;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+
+  &.fallback {
+    transition: all 0.3s ease-in-out;
   }
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50px);
+  }
+
+  p {
+    line-height: 1.9rem;
+    font-size: 1.25rem;
+    letter-spacing: 3px;
+  }
+
+  a {
+    border-bottom: solid 2px #fff;
+  }
+  // text-align: center;
+  // backdrop-filter: blur(8px);
 }

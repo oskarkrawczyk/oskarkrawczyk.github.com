@@ -4,16 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="public/dist/base.css" media="screen" charset="utf-8">
     <script src="https://cdn.rawgit.com/stevenschobert/instafeed.js/master/instafeed.min.js" charset="utf-8"></script>
-    <script type="text/javascript">
-      var feed = new Instafeed({
-        get: "user",
-        userId: "427572618",
-        accessToken: "427572618.33afb76.1c728966039a493dbeb18c73401daba3",
-        limit: 4,
-        template: '<a href="{{link}}"><img src="{{image}}" /></a>'
-      });
-      feed.run();
-    </script>
+    <script src="public/dist/base.js" charset="utf-8"></script>
     <title>Oskar Krawczyk</title>
   </head>
   <body>
@@ -28,10 +19,14 @@
           <title>mail</title>
           <path class="path1" d="M1.143 28.571h34.286v-18.571l-16.476 12.063h-1.333l-16.476-12.063v18.571zM18.286 21.143l17.143-12.571v-5.143h-34.286v5.143zM36.571 2.286v27.429h-36.571v-27.429h36.571z"></path>
         </symbol>
+        <symbol id="icon-close" viewBox="0 0 32 32">
+          <title>close</title>
+          <path class="path1" d="M32 0.857l-15.143 15.143 15.143 15.143-0.857 0.857-15.143-15.143-15.143 15.143-0.857-0.857 15.143-15.143-15.143-15.143 0.857-0.857 15.143 15.143 15.143-15.143z"></path>
+        </symbol>
       </defs>
     </svg>
 
-    <section>
+    <section class="mCont">
       <h1><a href="/"><span>Oskar Krawczyk</span></a></h1>
       <h2>
         Creator of <a href="https://jsfiddle.net" target="_blank">JSFiddle</a>,
@@ -46,20 +41,31 @@
           <svg class="icon icon-instagram"><use xlink:href="#icon-instagram"></use></svg>
         </div>
         <div id="instafeed"></div>
-      </div>
+      </div> <!-- /contItem -->
 
       <div class="contItem">
         <div class="iconSection">
           <svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg>
         </div>
-        <a class="mail" href="mailto:oskar@krawczyk.io">Get in touch</a>
-      </div>
+        <a class="mail" href="mailto:oskar@krawczyk.io">
+          <span>Get in touch</span>
+          <svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg>
+        </a>
+      </div> <!-- /contItem -->
+    </section> <!-- /mCont -->
 
-    </section>
+    <div class="mailSpander">
+      <section class="mCont">
+        <p>
+          Since you've already ended up here, <br>
+          drop me an email and say Hi: <a href="mailto:oskar@krawczyk.io">oskar@krawczyk.io</a>
+        </p>
+      </section> <!-- /mCont -->
+    </div> <!-- /mailSpander -->
 
-    <!-- <script id="__bs_script__">//<![CDATA[
+    <script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:2001/browser-sync/browser-sync-client.2.13.0.js'><\/script>".replace("HOST", location.hostname));
-//]]></script> -->
+//]]></script>
 
   </body>
 </html>
