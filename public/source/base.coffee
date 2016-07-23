@@ -22,15 +22,7 @@ repositionStart = (mail, mailSpander) ->
   if noClipPath()
     mailSpander.classList.add "hidden"
 
-window.addEventListener "load", ->
-
-  feed = new Instafeed
-    get:         "user"
-    userId:      "427572618"
-    accessToken: "427572618.33afb76.1c728966039a493dbeb18c73401daba3"
-    limit:       4
-
-  feed.run()
+window.addEventListener "DOMContentLoaded", ->
 
   mail        = document.querySelector ".mail"
   mailSpander = document.querySelector ".mailSpander"
@@ -59,3 +51,11 @@ window.addEventListener "load", ->
 
   window.addEventListener "resize", ->
     repositionStart mail, mailSpander
+
+  feed = new Instafeed
+    get:         "user"
+    userId:      "427572618"
+    accessToken: "427572618.33afb76.1c728966039a493dbeb18c73401daba3"
+    limit:       4
+
+  feed.run()
